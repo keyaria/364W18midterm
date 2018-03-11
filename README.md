@@ -26,7 +26,7 @@ These could be in the same template, and could be 1 of the 2 additional template
  
  **At least one additional (not provided) WTForm that sends data with a POST request to the same page.**
  
- At least one custom validator for a field in a WTForm.
+** At least one custom validator for a field in a WTForm.**
  
  **At least 2 additional model classes.**
  
