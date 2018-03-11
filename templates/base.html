@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+    	{% block head %}
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/materialize.min.css') }}">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      {% endblock %}
+    </head>
+
+<body  class="blue-grey lighten-4 flow-text">
+	{% block navbar %}
+<nav >
+	 <div class="nav-wrapper light-blue darken-4">
+<ul  class="header center-align ">
+	<li><a href="{{ url_for('home')}}">Home</a></li>
+	<li><a href="{{ url_for('get_character')}}">Character Form</a></li>
+	<li><a href="{{ url_for('see_all_char')}}">All Characters Entered</a></li>
+	<li><a href="{{ url_for('get_info')}}">Information On Characters</a></li>
+	<li><a href="{{ url_for('get_comic')}}">Find Comics</a></li>
+
+</ul>
+</div>
+</nav>
+{% endblock %}
+<div class="container center-align white" style=" margin-top: 50px">
+
+	
+
+
+<h1> Marvel </h1>
+{% block content %}
+<p class="flow-text">This application allows users to search comic books and enter characters they life and get information on those characters. One can also see other users favorite characters.
+<br><br>
+By: Keyaria Walker
+</p>
+
+
+{% endblock %}
+
+</div>
+{% block content2 %}
+
+{% endblock %}
+
+<script type="text/javascript" src="{{ url_for('static',filename='js/materialize.min.js') }}"></script>
+</body>
+</html>

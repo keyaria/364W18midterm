@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for dc in get_flashed_messages() %}
+<b>Fields that were a problem:</b><br><br>
+
+    {% for key in dc %}
+       * <b>{{ key }}</b> <br>
+    {% endfor %}
+{% endfor %}
+<form action="{{ url_for('retriv_char') }}" method="GET">
+	 {{ form.hidden_tag() }}
+
+	{{ form.disname.label }} 
+	{{ form.disname() }}<br>
+	
+	{{ form.favchar.label }} {{ form.favchar() }}
+	<br>
+	{{ form.expla.label }} {{ form.expla() }}<br>
+	 
+    <p>
+      <label>
+        <input name="movorcom" type="radio" value="Movies"  checked/>
+        <span>Movies</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="movorcom" type="radio" value="Comics"  />
+        <span>Comics</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="movorcom" type="radio" value="Both"   />
+        <span>Both</span>
+      </label>
+    </p>
+	
+  <button class="btn waves-effect waves-light light-blue darken-4">
+	{{ form.submit() }}<br>
+</button>
+
+</form>
+
+{% endblock %}
+

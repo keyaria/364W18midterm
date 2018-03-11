@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div >
+<ul>
+{% for us in all_char %}
+	<div style="display: inline-block;" >
+    <li class="blue lighten-5 card-panel"  >Fav character: {{ us[0] }} <br>Reason: {{us[1]}}
+    	<br><i>submitted by</i> <strong>{{ us[2] }}</strong ><br> Reads Comics or watches Movies: {{us[3]}}</li><br><br>
+    </div>
+{% endfor %}
+
+</ul>
+</div>
+{% if not all_char %}
+    There are no saved users to show.
+{% endif %}
+
+<div>
+{% for message in get_flashed_messages() %}
+    <strong>*** {{ message }} ***</strong>
+{% endfor %}
+</div>
+
+
+
+{% endblock %}

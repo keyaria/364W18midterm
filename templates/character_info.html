@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+
+{% for us in allof %}
+
+	<div  style="display: inline-block;" >
+    <li class="card " style="width: 250px;">
+    	
+    	<div class="card-image  waves-effect waves-block waves-light"><img class="activator" src="{{ us[1] }}" >
+    	<span class="card-title"><strong>{{ us[2] }}</strong></span>
+    	</div>
+     <div class="card-reveal">
+     	<span class="card-title grey-text text-darken-4">{{ us[2] }}<i class="material-icons right">close</i></span>
+    	<div class="card-content" ><p> {{ us[0] }} </p>
+    	</div>
+    </div>
+    </li>
+	</div>
+{% endfor %}
+</ul>
+{% endblock %}

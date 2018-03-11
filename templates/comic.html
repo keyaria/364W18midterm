@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+	{{ form.hidden_tag() }}
+	{{ form.comic.label }} {{ form.comic() }}
+	{{ form.submit() }}
+</form>
+
+<div>
+
+{% if results %}
+{% for i in range(5) %}
+<h1>{{results[i]['title']}}</h1>
+<img src="{{results[i]['thumbnail']['path']+'/portrait_medium.'+ results[0]['thumbnail']['extension'] }}">
+
+<br>
+{{results[i]['description']}}
+<br>
+rating:{{results[i]['rating']}}
+<br>
+status: {{results[i]['type']}}
+<br>
+
+
+{% endfor %}
+
+{% endif %}
+</div>
+<div>
+{% for message in get_flashed_messages() %}
+    <strong>{{ message }}</strong>
+{% endfor %}
+</div>
+
+{% endblock %}
